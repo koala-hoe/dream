@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five D - Selamat Berjuang!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Five D</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="#wali-kelas"><i class="fas fa-chalkboard-teacher"></i> Wali Kelas</a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> Galeri</a></li>
+                <li><a href="#video"><i class="fas fa-video"></i> Video</a></li>
+                <li><a href="#ucapan"><i class="fas fa-comment-dots"></i> Ucapan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Halaman Utama -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Happy Graduation!</h1>
+            <h2 class="hero-subtitle fade-in">The Brilliant Generation</h2>
+            <p class="hero-text fade-in">"Perjalanan ini telah berakhir, namun perjalanan baru akan segera dimulai. Teruslah bermimpi dan berjuang!"</p>
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary"><i class="fas fa-images"></i> Lihat Kenangan</a>
+                <a href="#ucapan" class="btn btn-secondary"><i class="fas fa-pen"></i> Kirim Ucapan</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/images/banner.jpg" alt="Foto Kelas" id="banner-image">
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Kata-kata Wali Kelas -->
+    <section id="wali-kelas" class="wali-kelas">
+        <div class="container">
+            <h2 class="section-title">Kata-Kata dari Wali Kelas</h2>
+            <div class="wali-kelas-card">
+                <div class="wali-kelas-profile">
+                    <div class="profile-image">
+                        <img src="assets/images/wali-kelas.jpg" alt="Wali Kelas" id="wali-image">
+                    </div>
+                    <div class="profile-info">
+                        <h3>Fatihatus Sya'adah</h3>
+                        <p>Your Beloved Mother</p>
+                    </div>
+                </div>
+                <div class="wali-kelas-message">
+                    <p>Anak-anakku yang luar biasa,</p>
+                    <p>Perjalanan tiga tahun ini telah membawa kita pada momen perpisahan yang penuh haru. Saya sangat bangga melihat perkembangan kalian dari hari ke hari, dari remaja yang penuh tanya menjadi pribadi yang siap menghadapi dunia.</p>
+                    <p>Ingatlah, ijazah hanyalah selembar kertas. Nilai sejati kalian terletak pada karakter, integritas, dan semangat pantang menyerah yang telah kalian tunjukkan. Teruslah belajar, karena pembelajaran sejati terjadi di luar kelas.</p>
+                    <p>Selamat melanjutkan perjalanan! Jangan lupa sekolah dan guru-gurumu yang telah mendampingi. Sukses selalu untuk kalian semua!</p>
+                    <p class="signature">Dengan penuh kasih sayang,<br>Five D Homeroom</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Foto -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri Kenangan</h2>
+            <p class="section-subtitle">Momen-momen indah yang takkan terlupakan</p>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Foto-foto akan dimuat dengan JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Modal untuk foto fullscreen -->
+        <div class="modal" id="imageModal">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </section>
+
+    <!-- Video Perpisahan -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2 class="section-title">Video Kenangan</h2>
+            <p class="section-subtitle">Rekaman momen spesial perjalanan kita</p>
+            <div class="video-container">
+                <!-- Jika menggunakan video YouTube -->
+                <div class="video-wrapper">
+                    <iframe id="youtubeVideo" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Perpisahan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p class="video-note">Atau gunakan video lokal dengan mengganti file video di folder assets/videos/</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Ucapan dan Daftar Ucapan -->
+    <section id="ucapan" class="ucapan-section">
+        <div class="container">
+            <h2 class="section-title">Ucapan & Pesan</h2>
+            <p class="section-subtitle">Sampaikan pesan perpisahan dan kelulusanmu di sini</p>
+            
+            <!-- Form Ucapan -->
+            <div class="form-container">
+                <form id="ucapanForm">
+                    <div class="form-group">
+                        <label for="nama"><i class="fas fa-user"></i> Nama</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Nama kamu">
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan"><i class="fas fa-comment"></i> Pesan</label>
+                        <textarea id="pesan" name="pesan" rows="5" required placeholder="Tulis pesan perpisahan atau ucapan selamat kelulusan..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Kirim Ucapan
+                    </button>
+                    <p class="form-note">Ucapan akan disimpan di file messages.json dan ditampilkan di bawah.</p>
+                </form>
+            </div>
+            
+            <!-- Daftar Ucapan -->
+            <div class="ucapan-container">
+                <h3 class="ucapan-title">Ucapan dari Teman-teman</h3>
+                <div class="ucapan-list" id="ucapanList">
+                    <!-- Daftar ucapan akan dimuat dengan JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Five D</h3>
+                    <p>The Brilliant Generation</p>
+                </div>
+                <div class="footer-info">
+                    <p>Website perpisahan kelas dibuat dengan penuh kenangan.</p>
+                    <p>Terima kasih atas segala momen indah bersama.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Five D. Selamat berjuang di masa depan!</p>
+                <p class="footer-note">Website ini dihosting di GitHub Pages. Ucapan disimpan di file messages.json.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
