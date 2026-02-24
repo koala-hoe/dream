@@ -377,3 +377,78 @@ function setupAdminTools() {
 // Panggil fungsi admin jika diperlukan
 // setupAdminTools();
 */
+
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfb8T8A8yAt-XxPMOwe-2vlEt-JSBQzBLuSBCS3JrX6le6oqhw1w7B_oZslSc_XjeC/exec';
+const ucapanForm = document.getElementById('ucapanForm');
+const ucapanList = document.getElementById('ucapanList');
+const statusPesan = document.getElementById('formStatus');
+
+// 1. Fungsi Ambil Data (GET)
+async function muatUcapan() {
+    try {
+        const response = await fetch(SCRIPT_URL);
+        const data = await response.json();
+        
+        ucapanList.innerHTML = ''; // Bersihkan list
+        
+        if (data.length === 0) {
+            ucapanList.innerHTML = '<p>Belum ada ucapan. Jadilah yang pertama!</p>';
+            return;
+        }
+
+        data.reverse().forEach(item => { // Balik agar ucapan terbaru di atas
+            const card = document.createElement('div');
+            card.className = 'ucapan-item'; // Tambahkan styling CSS untuk class ini
+            card.innerHTML = `
+                <div class="ucapan-header">
+                    <strong>${item.nama}</strong>
+                    <small>${item.tanggal}</small>
+                </div>
+                <p>${item.pesan}</p>
+                <hr style="border: 0.5px solid #eee; margin: 10px 0;">
+            `;
+            ucapanList.appendChild(card);
+        });
+    } catch (e) {
+        ucapanList.innerHTML = '<p>Gagal memuat ucapan.</p>';
+    }
+}
+
+// 2. Fungsi Kirim Data (POST)
+ucapanForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = 'Mengirim...';
+    
+    statusPesan.style.display = 'block';
+    statusPesan.textContent = 'Sedang mengirim pesan...';
+
+    const payload = {
+        nama: document.getElementById('nama').value,
+        pesan: document.getElementById('pesan').value
+    };
+
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+    })
+    .then(res => {
+        statusPesan.textContent = 'Ucapan berhasil terkirim!';
+        statusPesan.style.color = 'green';
+        ucapanForm.reset();
+        muatUcapan(); // Refresh daftar ucapan
+    })
+    .catch(err => {
+        statusPesan.textContent = 'Waduh, gagal mengirim ucapan.';
+        statusPesan.style.color = 'red';
+    })
+    .finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Ucapan';
+    });
+});
+
+// Jalankan saat halaman dibuka
+document.addEventListener('DOMContentLoaded', muatUcapan);
