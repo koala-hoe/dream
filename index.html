@@ -43,9 +43,9 @@
         <div class="hero-image">
             <img src="assets/images/foto1.jpg" alt="Foto Kelas" id="banner-image">
         </div>
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
-        </div>
+        </div> -->
     </section>
 
     <!-- Kata-kata Wali Kelas -->
@@ -66,14 +66,11 @@
                     <p>Anak-anakku yang luar biasa,</p>
                     <p>Perjalanan satu tahun ini telah membawa kita pada momen perpisahan yang penuh haru.
                        Ustadzah sangat bangga melihat perkembangan kalian dari hari ke hari, dari remaja yang penuh tanya menjadi pribadi yang siap menghadapi dunia.
-                        </p>
-                        <p>Ahlan wa sahlan ustadzah cilik, Hadirmu dinantikan sifat dan perkataanmu akan menjadi tauladan.
-                           Nak, Kalian sudah berhasil melewati fase yang dulu kalian kira itu hal yang menakutkan. Kalian berhasil bangkit dari segala keterpurukan dan ujian-ujian itu.
-                           Terima kasih sudah bertahan dan selalu kuat dan belajar dari pengalaman dan berani bertanggung jawab atas perbuatanmu apapun itu.
-                           I'm so proud of u all....
-                           
-                        
-</p>
+                    </p>
+                    <p>Ahlan wa sahlan ustadzah cilik, Hadirmu dinantikan sifat dan perkataanmu akan menjadi tauladan.
+                        Nak, Kalian sudah berhasil melewati fase yang dulu kalian kira itu hal yang menakutkan. Kalian berhasil bangkit dari segala keterpurukan dan ujian-ujian itu.
+                        Terima kasih sudah bertahan dan selalu kuat dan belajar dari pengalaman dan berani bertanggung jawab atas perbuatanmu apapun itu.
+                        I'm so proud of u all.... </p>
                     <p>Ingatlah, ijazah hanyalah selembar kertas. Nilai sejati kalian terletak pada karakter, integritas, dan semangat pantang menyerah yang telah kalian tunjukkan. Teruslah belajar, karena pembelajaran sejati terjadi di luar kelas.</p>
                     <p>Selamat melanjutkan perjalanan! Jangan lupa sekolah dan guru-gurumu yang telah mendampingi. Sukses selalu untuk kalian semua!</p>
                     <p class="signature">With Love,<br>Five D Homeroom</p>
@@ -106,11 +103,14 @@
             <h2 class="section-title">Video Kenangan</h2>
             <p class="section-subtitle">Rekaman momen spesial perjalanan kita</p>
             <div class="video-container">
-                <!-- Jika menggunakan video YouTube -->
+                <!-- Video lokal -->
                 <div class="video-wrapper">
-                    <iframe id="youtubeVideo" src="assets/videos/" title="Video Perpisahan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video id="localVideo" width="100%" height="auto" controls>
+                        <source src="assets/videos/video1.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video tag.
+                    </video>
                 </div>
-                <p class="video-note">Atau gunakan video lokal dengan mengganti file video di folder assets/videos/</p>
+                <!-- <p class="video-note">Ganti file video di folder assets/videos/</p> -->
             </div>
         </div>
     </section>
@@ -122,29 +122,29 @@
             <p class="section-subtitle">Sampaikan pesan perpisahan dan kelulusanmu di sini</p>
             
             <!-- Form Ucapan -->
-<div class="form-container">
-    <form id="ucapanForm">
-        <div class="form-group">
-            <label for="nama"><i class="fas fa-user"></i> Nama</label>
-            <input type="text" id="nama" name="nama" required placeholder="Nama kamu">
-        </div>
-        <div class="form-group">
-            <label for="pesan"><i class="fas fa-comment"></i> Pesan</label>
-            <textarea id="pesan" name="pesan" rows="5" required placeholder="Tulis pesan perpisahan..."></textarea>
-        </div>
-        <button type="submit" id="submitBtn" class="btn btn-primary">
-            <i class="fas fa-paper-plane"></i> Kirim Ucapan
-        </button>
-        <p id="formStatus" class="form-note" style="margin-top: 10px; display: none;"></p>
-    </form>
-</div>
+            <div class="form-container">
+                <form id="ucapanForm">
+                    <div class="form-group">
+                        <label for="nama"><i class="fas fa-user"></i> Nama</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Nama kamu">
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan"><i class="fas fa-comment"></i> Pesan</label>
+                        <textarea id="pesan" name="pesan" rows="5" required placeholder="Tulis pesan perpisahan..."></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Kirim Ucapan
+                    </button>
+                    <p id="formStatus" class="form-note" style="margin-top: 10px; display: none;"></p>
+                </form>
+            </div>
 
-<div class="ucapan-container">
-    <h3 class="ucapan-title">Ucapan dari Teman-teman</h3>
-    <div class="ucapan-list" id="ucapanList">
-        <p style="text-align: center;">Memuat ucapan...</p>
-    </div>
-</div>
+            <!-- <div class="ucapan-container">
+                <h3 class="ucapan-title">Ucapan dari Teman-teman</h3>
+                <div class="ucapan-list" id="ucapanList">
+                    <p style="text-align: center;">Memuat ucapan...</p>
+                </div>
+            </div> -->
             
             <!-- Daftar Ucapan -->
             <div class="ucapan-container">
@@ -176,7 +176,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Five D. Selamat berjuang di masa depan!</p>
-                <p class="footer-note">Website ini dihosting di GitHub Pages. Ucapan disimpan di file messages.json.</p>
+                <!-- <p class="footer-note">Website ini dihosting di GitHub Pages. Ucapan disimpan di file messages.json.</p> -->
             </div>
         </div>
     </footer>

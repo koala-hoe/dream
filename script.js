@@ -45,7 +45,7 @@ const CONFIG = {
         { src: "assets/images/foto41.jpg", caption: "Foto Bersama di Hari Terakhir" },
         { src: "assets/images/foto42.jpg", caption: "Foto Bersama di Hari Terakhir" },
         { src: "assets/images/foto43.jpg", caption: "Foto Bersama di Hari Terakhir" },
-        { src: "assets/images/foto44.jpg", caption: "Foto Bersama di Hari Terakhir" };
+        { src: "assets/images/foto44.jpg", caption: "Foto Bersama di Hari Terakhir" }],
     
     // ID video YouTube (ganti dengan video yang sesuai)
     youtubeVideoId: "dQw4w9WgXcQ",
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupScrollAnimations();
     
     // Setup tahun di footer
-    document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Kelas XII. Selamat berjuang di masa depan!`;
+    document.querySelector('.footer-bottom p').innerHTML = `&copy; ${new Date().getFullYear()} Five D. Selamat berjuang di masa depan!`;
 });
 
 // Setup navigasi mobile
